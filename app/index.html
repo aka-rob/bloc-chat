@@ -3,10 +3,25 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Bloc Base Project</title>
-    <link rel="stylesheet" href="/styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-    <ui-view></ui-view>
+    <div class="container">
+        <nav>
+            <ui>
+                <li>room 1</li>
+                <li>room 2</li>
+                <li>room 3</li>
+            </ui>
+        </nav>
+        <main>
+            <ui-view></ui-view>
+        </main>
+        <div class="text-entry">
+            Enter:
+        </div>
+    </div>
     <!-- Angular -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
      <!-- AngularUI Router -->
