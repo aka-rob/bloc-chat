@@ -1,5 +1,7 @@
-
+<nav>
+  <h2>Bloc Chat</h2>
+    <ui>
+        <li ng-repeat="room in home.rooms">{{ room.$value }}</li>
+    </ui>
+</nav>
 <h1>Home Page</h1>
-<div ng-repeat="room in rooms">
-  {{ room }}
-</div>

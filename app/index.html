@@ -8,12 +8,6 @@
 </head>
 <body>
     <div class="container">
-      <nav ng-controller="NavCtrl as nav">
-        <h2>Bloc Chat</h2>
-          <ui>
-              <li ng-repeat="room in nav.rooms">{{ room.$value }}</li>
-          </ui>
-      </nav>
         <main>
             <ui-view></ui-view>
         </main>
@@ -42,6 +36,5 @@
     <script src="/scripts/app.js"></script>
     <script src="/scripts/services/Room.js"></script>
     <script src="/scripts/controllers/HomeCtrl.js"></script>
-    <script src="/scripts/controllers/NavCtrl.js"></script>
 </body>
 </html>
