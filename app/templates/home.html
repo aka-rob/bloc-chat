@@ -3,5 +3,8 @@
     <ui>
         <li ng-repeat="room in home.rooms">{{ room.$value }}</li>
     </ui>
+      <input type="text" ng-model="newRoom" />
+      <button ng-click="home.addRoom()">Submit</button>
+    {{ newRoom }}
 </nav>
 <h1>Home Page</h1>
