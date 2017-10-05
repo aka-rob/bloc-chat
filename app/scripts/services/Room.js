@@ -10,10 +10,6 @@
       rooms.$add(room);
     };
 
-    Room.tellMe = function(message) {
-      console.log(message);
-    }
-
     return Room;
   };
 

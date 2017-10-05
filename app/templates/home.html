@@ -1,10 +1,9 @@
 <nav>
   <h2>Bloc Chat</h2>
     <ui>
-        <li ng-repeat="room in home.rooms | orderBy:$value">{{ room.$value }}</li>
+        <li ng-repeat="room in home.rooms | orderBy:roomName">{{ room.roomName }}</li>
     </ui>
-      <input type="text" ng-model="room" />
-      <button ng-click="home.addRoom()">Submit</button>
+    <button type="button" class="btn btn-default" ng-click="home.open()">Add Room</button>
     {{ newRoom }}
 </nav>
 <h1>Home Page</h1>
