@@ -6,11 +6,13 @@
 
     Room.all = rooms;
 
-    console.log(rooms);
-
     Room.add = function(room) {
       rooms.$add(room);
     };
+
+    Room.tellMe = function(message) {
+      console.log(message);
+    }
 
     return Room;
   };

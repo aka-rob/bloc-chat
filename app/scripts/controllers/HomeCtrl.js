@@ -2,7 +2,11 @@
   function HomeCtrl($scope, Room) {
     this.rooms = Room.all;
 
-    this.addRoom = Room.add({room: "'" + $scope.newRoom + "'" });
+    console.log(this.rooms);
+
+    this.addRoom = function() {
+      Room.add({$value: $scope.room});
+    };
 
   };
 
