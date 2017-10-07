@@ -1,9 +1,24 @@
 <nav>
   <h2>Bloc Chat</h2>
     <ui>
-        <li ng-repeat="room in home.rooms | orderBy:roomName">{{ room.roomName }}</li>
+        <li ng-repeat="room in rooms"><button type="button" class="btn btn-default" ng-click="getByRoomId(room.$id)">{{ room.roomName }}</button></li>
     </ui>
-    <button type="button" class="btn btn-default" ng-click="home.open()">Add Room</button>
-    {{ newRoom }}
+    <br />
+    <button type="button" class="btn btn-default" ng-click="open()">Add Room</button>
 </nav>
-<h1>Home Page</h1>
+<div class="chat-room">
+  <h1>{{ rooms.roomName }}</h1>
+  <div class="message-box" ng-repeat="message in messages">
+    <div class="user-name">
+      {{ message.username }}
+    </div>
+    <div class="message-time">
+      {{ message.sentAt }}
+    </div>
+    <div class="message-body">
+      {{ message.content }}
+    </div>
+
+  </div>
+
+</div>
