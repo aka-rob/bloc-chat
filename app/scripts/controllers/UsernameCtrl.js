@@ -3,7 +3,10 @@
 
   $scope.setUsername = function() {
     $cookies.put('blocChatCurrentUser', $scope.blocChatCurrentUser);
-    $uibModalInstance.close();
+
+    if($scope.blocChatCurrentUser) {
+      $uibModalInstance.close();
+    }
   };
 
 };
