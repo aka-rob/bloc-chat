@@ -7,7 +7,7 @@
   };
 
   $scope.cancel = function() {
-    $uibModalInstance.dismiss();
+    $uibModalInstance.close();
   };
 
 
