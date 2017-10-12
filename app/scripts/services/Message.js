@@ -10,6 +10,10 @@
       return $firebaseArray(query);
     };
 
+    Message.send = function(newMessage) {
+      messages.$add(newMessage);
+    };
+
     return Message;
   }
 

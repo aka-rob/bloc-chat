@@ -1,6 +1,7 @@
 (function() {
   function BlocChatCookies($cookies, $uibModal) {
     var currentUser = $cookies.get('blocChatCurrentUser');
+
     if (!currentUser || currentUser === '') {
 
         $uibModal.open({

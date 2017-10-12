@@ -18,7 +18,12 @@
     <div class="message-body">
       {{ message.content }}
     </div>
-
   </div>
-
+</div>
+<div class="message-send">
+  <form>
+    <input type="text" class="form-control finderBar" ng-model="content" placeholder="Message..." autofocus>
+    <span class="input-group-btn">
+    <button class="btn btn-default btn-success" type="button" ng-click="sendMessage()">Send</button>
+  </form>
 </div>
