@@ -2,8 +2,10 @@
   function ModalCtrl($scope, $uibModalInstance, Room) {
 
   $scope.ok = function() {
-  	Room.add({roomName: $scope.room});
-    $uibModalInstance.close();
+    if ($scope.room){
+      Room.add({roomName: $scope.room});
+      $uibModalInstance.close();
+    };
   };
 
   $scope.cancel = function() {

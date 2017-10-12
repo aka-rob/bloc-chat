@@ -2,11 +2,11 @@
   <h3 class="modal-title">Enter Username</h3>
 </div>
 <div class="modal-body">
-  <form>
+  <form ng-submit="setUsername()">
     <div class="input-group animated fadeIn">
       <input type="text" class="form-control finderBar" ng-model="blocChatCurrentUser" placeholder="Create a username (required)" autofocus>
       <span class="input-group-btn">
-      <button class="btn btn-default btn-success" type="button" ng-click="setUsername()" ng-disabled="!blocChatCurrentUser">Create user</button>
+      <button class="btn btn-default btn-success" type="button" ng-disabled="!blocChatCurrentUser">Create user</button>
   </span>
     </div>
   </form>

@@ -1,10 +1,11 @@
 <nav>
   <h2>Bloc Chat</h2>
     <ui>
-        <li ng-repeat="room in rooms"><button type="button" class="btn btn-default" ng-click="getByRoomId(room.$id)">{{ room.roomName }}</button></li>
+        <li ng-repeat="room in rooms"><a ng-click="getByRoomId(room.$id)">{{ room.roomName }}</a></li>
     </ui>
     <br />
     <button type="button" class="btn btn-default" ng-click="open()">Add Room</button>
+    <h3 ng-show="rooms.length===0">Create a room to start chatting!</h3>
 </nav>
 <div class="chat-room">
   <h1>{{ rooms.roomName }}</h1>
@@ -13,17 +14,17 @@
       {{ message.username }}
     </div>
     <div class="message-time">
-      {{ message.sentAt }}
+      {{ message.sentAt | date:"MM/dd/yyyy 'at' h:mma" }}
     </div>
     <div class="message-body">
       {{ message.content }}
     </div>
   </div>
 </div>
-<div class="message-send">
-  <form>
+<div class="message-send" ng-show="roomId">
+  <form ng-submit="sendMessage()">
     <input type="text" class="form-control finderBar" ng-model="content" placeholder="Message..." autofocus>
     <span class="input-group-btn">
-    <button class="btn btn-default btn-success" type="button" ng-click="sendMessage()">Send</button>
+    <button class="btn btn-default btn-success" ng-disabled="!content" type="button">Send</button>
   </form>
 </div>

@@ -18,33 +18,17 @@
     };
 
     $scope.sendMessage = function() {
-      var date = new Date();
-      var dd = date.getDate();
-      var mm = date.getMonth() + 1;
-      var yyyy = date.getFullYear();
+      if ($scope.content && $scope.roomId) {
+        Message.send({
+          content: $scope.content,
+          roomId: $scope.roomId,
+          sentAt: firebase.database.ServerValue.TIMESTAMP,
+          username: $cookies.get('blocChatCurrentUser')
+        });
 
-      if (dd < 10) {
-        dd = '0' + dd;
+        $scope.content = '';
       };
-
-      if (mm < 10) {
-        mm = '0' + mm;
-      };
-
-      $scope.today = mm + '/' + dd + '/' + yyyy;
-
-      Message.send({
-        content: $scope.content,
-        roomId: $scope.roomId,
-        sentAt: $scope.today,
-        username: $cookies.get('blocChatCurrentUser')
-      });
-      $scope.content = '';
-    };
-
-    $('form').submit(function(event){
-        $scope.sendMessage();
-    });
+    }
 
   };
 
