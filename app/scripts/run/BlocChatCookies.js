@@ -6,7 +6,7 @@
 
         $uibModal.open({
             animation: true,
-            templateUrl: 'templates/usernameModal.html',
+            templateUrl: 'templates/UsernameModal.html',
             controller: 'UsernameCtrl',
             backdrop: 'static'
         });
