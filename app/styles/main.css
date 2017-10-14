@@ -1,51 +1,52 @@
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 html {
     font-family: 'Source Sans Pro', sans-serif;
-    height: 100%;
 }
 
-body {
-    height: 100%;
+.home {
+
 }
 
-.container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 10px;
-    box-sizing: border-box;
-    border: solid 1px lightgray;
+/*.home, .nav, .chat-room, .message-send {
+  border: solid 1px red;
+}*/
+
+.first-row {
+  min-height: inherit;
 }
 
-nav {
-    box-sizing: border-box;
-    width: 20%;
-    float: left;
-    list-style-type: none;
-    padding: 10px;
-    background-color: rgb(225, 233, 237);
-    /*border: solid 1px red;*/
+.nav {
+  padding: 0 0 0 15px;
+  height: inherit;
 }
 
-main {
-    box-sizing: border-box;
-    height: 100%;
-    margin-left: 20%;
-    padding: 10px;
-    width: 80%;
-    /*border: solid 1px blue;*/
+.nav-menu {
+  margin-top: 10px;
 }
 
-a:link, a:visited {
-  color: inherit;
-  text-decoration: none;
+/* Where all chat messages appear */
+.chat-room {
+  max-height: 739px;
+  overflow: scroll;
 }
 
-.text-entry {
-    box-sizing: border-box;
-    margin-left: 20%;
-    width: 80%;
-    height: 10%;
-    padding: 10px;
-    /*border: solid 1px green;*/
+.message-box { /* a single message */
+
+}
+
+/* Text entry for messages */
+.message-send {
+  margin-top: 10px;
+}
+
+.text-input {
+  width: 90%;
+  display: inline-block;
 }
 
 .clearfix:before,

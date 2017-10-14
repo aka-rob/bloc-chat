@@ -1,30 +1,37 @@
-<nav>
-  <h2>Bloc Chat</h2>
-    <ui>
-        <li ng-repeat="room in rooms"><a ng-click="getByRoomId(room.$id)">{{ room.roomName }}</a></li>
-    </ui>
-    <br />
-    <button type="button" class="btn btn-default" ng-click="open()">Add Room</button>
-    <h3 ng-show="rooms.length===0">Create a room to start chatting!</h3>
-</nav>
-<div class="chat-room">
-  <h1>{{ rooms.roomName }}</h1>
-  <div class="message-box" ng-repeat="message in messages">
-    <div class="user-name">
-      {{ message.username }}
+<div class="home container">
+  <div class="row first-row">
+    <div class="nav col-md-3">
+      <h2>Bloc Chat</h2>
+      <button type="button" class="btn btn-primary" ng-click="open()">Add Room</button>
+      <div class="nav-menu">
+        <ui>
+          <li ng-repeat="room in rooms"><a ng-click="getByRoomId(room.$id)">{{ room.roomName }}</a></li>
+        </ui>
+      </div>
     </div>
-    <div class="message-time">
-      {{ message.sentAt | date:"MM/dd/yyyy 'at' h:mma" }}
-    </div>
-    <div class="message-body">
-      {{ message.content }}
+    <div class="chat-room col-md-8" scroll-glue="true">
+      <h5 ng-show="rooms.length===0">Create a room to start chatting!</h5>
+      <div class="message-box panel panel-default" ng-repeat="message in messages">
+        <div class="user-name panel-heading">
+          <span class="panel-title"><strong>{{ message.username }}</strong></span>
+          {{ message.sentAt | date:"MM/dd/yyyy 'at' h:mma" }}
+        </div>
+        <div class="message-body panel-body">
+          {{ message.content }}
+        </div>
+      </div>
     </div>
   </div>
+  <div class="row">
+  <div class="message-send col-md-8 col-md-offset-3" ng-show="roomId">
+    <form ng-submit="sendMessage()">
+      <div class="input-group">
+      <input type="text" class="form-control text-input" ng-model="content" placeholder="Message..." autofocus>
+      <span class="input-group-btn">
+      <button class="btn btn-primary" ng-disabled="!content" type="submit">Send</button>
+      </span>
+      </div>
+    </form>
+  </div>
 </div>
-<div class="message-send" ng-show="roomId">
-  <form ng-submit="sendMessage()">
-    <input type="text" class="form-control finderBar" ng-model="content" placeholder="Message..." autofocus>
-    <span class="input-group-btn">
-    <button class="btn btn-default btn-success" ng-disabled="!content" type="submit">Send</button>
-  </form>
 </div>
